@@ -1,24 +1,19 @@
 package net.cjpack.proxy;
 
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.cjpack.Reference;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.item.Item;
+import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ClientProxy extends CommonProxy implements ICCTProxy {
-	
-	@Override
-	public void preInit(FMLPreInitializationEvent event) {
-		super.preInit(event);
-	}
-	
-	@Override
-	public void init(FMLInitializationEvent event) {
-		super.init(event);
-	}
-	
-	@Override
-	public void postInit(FMLPostInitializationEvent event) {
-		super.postInit(event);
-	}
+public class ClientProxy extends CommonProxy {
+
+    @Override
+    @SideOnly(Side.CLIENT)
+    public void registerRenderer(Item item, int meta, String id) {
+        ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(Reference.MODID + ":" + id, "inventory"));
+    }
+
 
 }
