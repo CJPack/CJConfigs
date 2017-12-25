@@ -33,6 +33,9 @@ public class CCT {
             ConfigCategory c = i.getCategory("default");
             c.put("unlocalizedName", new Property("unlocalizedName", "default_item", Property.Type.STRING));
             c.put("registryName", new Property("registryName", "default_item", Property.Type.STRING));
+            c.put("tab", new Property("tab", "cct_items", Property.Type.STRING));
+            c.put("mods", new Property("mods", new String[]{"effect", "beacon"}, Property.Type.STRING));
+            c.put("size", new Property("size", "1", Property.Type.INTEGER));
         }
     }
     @EventHandler
