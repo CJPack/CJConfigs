@@ -1,14 +1,14 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
+  "modid": "cct",
+  "name": "CJs Custom Things",
+  "description": "Custom items designed for the CJPack modpack.",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "authorList": ["CJMinecraft", "Dogatron03", "XFireEyeX", "Strikerrocker"],
+  "credits": "The admins for helping create the modpack and this mod",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
