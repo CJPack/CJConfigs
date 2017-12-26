@@ -6,9 +6,9 @@ import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.util.ResourceLocation;
 
-public class CCTBlockBase extends Block {
+public class CTBlockBase extends Block {
 	
-	public CCTBlockBase(Material material, String name, CreativeTabs tab) {
+	public CTBlockBase(Material material, String name, CreativeTabs tab) {
 		super(material);
 		setUnlocalizedName(name);
 		setRegistryName(new ResourceLocation(Reference.MODID, name));

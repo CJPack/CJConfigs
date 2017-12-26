@@ -1,7 +1,7 @@
 package net.cjpack.init;
 
 import net.cjpack.Reference;
-import net.cjpack.block.CCTBlockBase;
+import net.cjpack.block.CTBlockBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -11,9 +11,9 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-public class CCTBlocks {
+public class CTBlocks {
 	
-	public static Block cjBlock = new CCTBlockBase(Material.IRON, "cj_block", null);
+	public static Block cjBlock = new CTBlockBase(Material.IRON, "cj_block", null);
 	
 	public static void createBlocks() {
 		createBlock(cjBlock);

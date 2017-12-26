@@ -1,14 +1,14 @@
 [
 {
-  "modid": "cct",
-  "name": "CJs Custom Things",
-  "description": "Custom items designed for the CJPack modpack.",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
+  "modid": "customthingies",
+  "name": "Custom Thingies",
+  "description": "Adds custom things like items, blocks, and more via configs, specially designed for CJMinecraft's modpack, "CJPack",
+  "version": "1.0.0",
+  "mcversion": "$1.10.2",
   "url": "",
-  "updateUrl": "",
-  "authorList": ["CJMinecraft", "Dogatron03", "XFireEyeX", "Strikerrocker"],
-  "credits": "The admins for helping create the modpack and this mod",
+  "updateUrl": "https://github.com/CJPack/Custom-Thingies",
+  "authorList": ["CJMinecraft", "Dogatron03", "XFireEyeZ", "Strikerrocker"],
+  "credits": "The community admins for helping create the modpack and this mod",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []

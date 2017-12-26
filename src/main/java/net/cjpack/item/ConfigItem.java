@@ -1,6 +1,6 @@
 package net.cjpack.item;
 
-import net.cjpack.CCT;
+import net.cjpack.CustomThingies;
 import net.cjpack.Reference;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
@@ -15,7 +15,7 @@ import java.util.List;
 
 public class ConfigItem extends Item {
 
-    public static CreativeTabs tab = new CreativeTabs("cct_items") {
+    public static CreativeTabs tab = new CreativeTabs("ct_items") {
         @Override
         public Item getTabIconItem() {
             return Items.NETHER_STAR;
@@ -51,7 +51,7 @@ public class ConfigItem extends Item {
     }
 
     public static void loadItems() {
-        CCT.i.getCategoryNames().forEach(c -> new ConfigItem(CCT.i.getCategory(c)));
+        CustomThingies.i.getCategoryNames().forEach(c -> new ConfigItem(CustomThingies.i.getCategory(c)));
     }
 
     public boolean hasEffect(ItemStack stack) {

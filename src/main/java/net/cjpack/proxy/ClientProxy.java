@@ -1,6 +1,6 @@
 package net.cjpack.proxy;
 
-import net.cjpack.init.CCTItems;
+import net.cjpack.init.CTItems;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;

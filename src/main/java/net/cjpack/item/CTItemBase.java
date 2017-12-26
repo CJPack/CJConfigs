@@ -6,11 +6,11 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
-public class CCTItemBase extends Item {
+public class CTItemBase extends Item {
 	
 	public static boolean effect;
 	
-	public CCTItemBase(String name, CreativeTabs tab, boolean effect) {
+	public CTItemBase(String name, CreativeTabs tab, boolean effect) {
 		setUnlocalizedName(name);
 		setRegistryName(new ResourceLocation(Reference.MODID, name));
 		setCreativeTab(tab);
