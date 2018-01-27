@@ -1,6 +1,6 @@
-package net.cjpack.cct.config;
+package cjpack.cjpe.config;
 
-import net.cjpack.cct.CCT;
+import cjpack.cjpe.CJPE;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
@@ -32,7 +32,7 @@ public class ConfigItem extends Item {
     public ConfigItem(ConfigCategory c) {
         this.c = c;
         this.setUnlocalizedName(c.get("unlocalizedName").getString());
-        this.setRegistryName(new ResourceLocation(CCT.MODID, c.get("registryName").getString()));
+        this.setRegistryName(new ResourceLocation(CJPE.MODID, c.get("registryName").getString()));
         this.setCreativeTab(c.get("tab") != null ? getTabByName(c.get("tab").getString()) : tab);
         this.setMaxDamage(c.get("durability") != null ? c.get("durability").getInt() : 1);
         this.setMaxStackSize(c.get("size") != null ? c.get("size").getInt() : 64);
@@ -49,10 +49,10 @@ public class ConfigItem extends Item {
     }
 
     public static void loadItems() {
-        CCT.i.getCategoryNames().forEach(c -> new ConfigItem(CCT.i.getCategory(c)));
+        CJPE.i.getCategoryNames().forEach(c -> new ConfigItem(CJPE.i.getCategory(c)));
         items.forEach(item -> {
             GameRegistry.register(item);
-            ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(new ResourceLocation(CCT.MODID), "inventory"));
+            ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(new ResourceLocation(CJPE.MODID), "inventory"));
         });
     }
 

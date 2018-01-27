@@ -1,13 +1,13 @@
 [
 {
-  "modid": "customthingies",
-  "name": "Custom Thingies",
+  "modid": "cjpe",
+  "name": "CJPack Extras",
   "description": "Adds custom things like items, blocks, and more via configs, specially designed for CJMinecraft's modpack, "CJPack",
   "version": "1.0.0",
-  "mcversion": "$1.10.2",
+  "mcversion": "1.10.2",
   "url": "",
-  "updateUrl": "https://github.com/CJPack/Custom-Thingies",
-  "authorList": ["CJMinecraft", "Dogatron03", "XFireEyeZ", "Strikerrocker"],
+  "updateUrl": "",
+  "authorList": ["CJMinecraft", "Dogatron03", "XFireEyeZ", "StrikerRocker"],
   "credits": "The community admins for helping create the modpack and this mod",
   "logoFile": "",
   "screenshots": [],

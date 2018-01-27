@@ -1,7 +1,7 @@
-package net.cjpack.cct;
+package cjpack.cjpe;
 
-import net.cjpack.cct.config.ConfigBlock;
-import net.cjpack.cct.config.ConfigItem;
+import cjpack.cjpe.config.ConfigBlock;
+import cjpack.cjpe.config.ConfigItem;
 import net.minecraftforge.common.config.ConfigCategory;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;
@@ -12,18 +12,18 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 import java.io.File;
 
-import static net.cjpack.cct.CCT.*;
+import static cjpack.cjpe.CJPE.*;
 
 @Mod(modid = MODID, name = NAME, version = VERSION, acceptedMinecraftVersions = MCVERSION)
-public class CCT {
+public class CJPE {
 
-    public static final String MODID = "cct";
-    public static final String NAME = "CJ's Custom Things";
+    public static final String MODID = "cjpe";
+    public static final String NAME = "CJPack Extras";
     public static final String VERSION = "1.0";
     public static final String MCVERSION = "[1.10.2]";
 
     @Mod.Instance(MODID)
-    public static CCT instance;
+    public static CJPE instance;
 
     public static Configuration i;
     public static Configuration b;
@@ -47,7 +47,7 @@ public class CCT {
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        File dir = new File(Loader.instance().getConfigDir() + File.separator + "CJCustomThings");
+        File dir = new File(Loader.instance().getConfigDir() + File.separator + "cjpe");
         dir.mkdir();
         File f = new File(dir, "items.cfg");
         i = new Configuration(f);
