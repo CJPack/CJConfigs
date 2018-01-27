@@ -1,7 +1,7 @@
-package cjpack.cjpe;
+package cjpack.configs;
 
-import cjpack.cjpe.config.ConfigBlock;
-import cjpack.cjpe.config.ConfigItem;
+import cjpack.configs.config.ConfigBlock;
+import cjpack.configs.config.ConfigItem;
 import net.minecraftforge.common.config.ConfigCategory;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;
@@ -12,21 +12,22 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 import java.io.File;
 
-import static cjpack.cjpe.CJPE.*;
+import static cjpack.configs.CJPackConfigs.*;
 
 @Mod(modid = MODID, name = NAME, version = VERSION, acceptedMinecraftVersions = MCVERSION)
-public class CJPE {
+public class CJPackConfigs {
 
-    public static final String MODID = "cjpe";
-    public static final String NAME = "CJPack Extras";
+    public static final String MODID = "cjconfigs";
+    public static final String NAME = "CJConfigs";
     public static final String VERSION = "1.0";
     public static final String MCVERSION = "[1.10.2]";
 
     @Mod.Instance(MODID)
-    public static CJPE instance;
+    public static CJPackConfigs instance;
 
     public static Configuration i;
     public static Configuration b;
+    public static Configuration c;
 
     public static void loadConfigDefaults() {
         if (i.getCategoryNames().size() == 0) {
@@ -47,7 +48,7 @@ public class CJPE {
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        File dir = new File(Loader.instance().getConfigDir() + File.separator + "cjpe");
+        File dir = new File(Loader.instance().getConfigDir() + File.separator + "CJConfigs");
         dir.mkdir();
         File f = new File(dir, "items.cfg");
         i = new Configuration(f);
@@ -55,6 +56,11 @@ public class CJPE {
         File ff = new File(dir, "blocks.cfg");
         b = new Configuration(ff);
         b.load();
+        File fff = new File(dir, "crafting.cfg");
+        c = new Configuration(fff);
+        c.load();
+
+
 
         loadConfigDefaults();
         i.save();

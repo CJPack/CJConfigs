@@ -1,8 +1,8 @@
 [
 {
-  "modid": "cjpe",
-  "name": "CJPack Extras",
-  "description": "Adds custom things like items, blocks, and more via configs, specially designed for CJMinecraft's modpack, "CJPack",
+  "modid": "cjconfigs",
+  "name": "CJConfigs",
+  "description": "Configurable Items & Block additions through config files!",
   "version": "1.0.0",
   "mcversion": "1.10.2",
   "url": "",

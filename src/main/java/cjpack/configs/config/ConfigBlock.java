@@ -1,6 +1,6 @@
-package cjpack.cjpe.config;
+package cjpack.configs.config;
 
-import cjpack.cjpe.CJPE;
+import cjpack.configs.CJPackConfigs;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -36,7 +36,7 @@ public class ConfigBlock extends Block {
         super(Material.IRON);
         this.c = c;
         this.setUnlocalizedName(c.get("unlocalizedName").getString());
-        this.setRegistryName(new ResourceLocation(CJPE.MODID, c.get("registryName").getString()));
+        this.setRegistryName(new ResourceLocation(CJPackConfigs.MODID, c.get("registryName").getString()));
         this.setCreativeTab(c.get("tab") != null ? getTabByName(c.get("tab").getString()) : tab);
         this.setHardness(c.get("hardness") != null ? Float.parseFloat(c.get("hardneess").getString()) : 1.0f);
         this.setHarvestLevel(c.get("tool") != null ? c.get("tool").getString() : "hand", c.get("harvest") != null ? c.get("harvest").getInt() : 0);
@@ -55,11 +55,11 @@ public class ConfigBlock extends Block {
     }
 
     public static void loadBlocks() {
-        CJPE.b.getCategoryNames().forEach(c -> new ConfigBlock(CJPE.b.getCategory(c)));
+        CJPackConfigs.b.getCategoryNames().forEach(c -> new ConfigBlock(CJPackConfigs.b.getCategory(c)));
         items.forEach(block -> {
             GameRegistry.register(block);
             GameRegistry.register(new ItemBlock(block).setUnlocalizedName(block.getUnlocalizedName()).setRegistryName(block.getRegistryName()));
-            ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(new ResourceLocation(CJPE.MODID), "inventory"));
+            ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(new ResourceLocation(CJPackConfigs.MODID), "inventory"));
         });
     }
 }
