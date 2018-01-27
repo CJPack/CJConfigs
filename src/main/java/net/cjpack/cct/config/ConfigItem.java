@@ -1,13 +1,15 @@
-package net.cjpack.item;
+package net.cjpack.cct.config;
 
-import net.cjpack.CustomThingies;
-import net.cjpack.Reference;
+import net.cjpack.cct.CCT;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.config.ConfigCategory;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import scala.actors.threadpool.Arrays;
 
 import java.util.ArrayList;
@@ -15,7 +17,7 @@ import java.util.List;
 
 public class ConfigItem extends Item {
 
-    public static CreativeTabs tab = new CreativeTabs("ct_items") {
+    public static CreativeTabs tab = new CreativeTabs("cct_items") {
         @Override
         public Item getTabIconItem() {
             return Items.NETHER_STAR;
@@ -30,7 +32,7 @@ public class ConfigItem extends Item {
     public ConfigItem(ConfigCategory c) {
         this.c = c;
         this.setUnlocalizedName(c.get("unlocalizedName").getString());
-        this.setRegistryName(new ResourceLocation(Reference.MODID, c.get("registryName").getString()));
+        this.setRegistryName(new ResourceLocation(CCT.MODID, c.get("registryName").getString()));
         this.setCreativeTab(c.get("tab") != null ? getTabByName(c.get("tab").getString()) : tab);
         this.setMaxDamage(c.get("durability") != null ? c.get("durability").getInt() : 1);
         this.setMaxStackSize(c.get("size") != null ? c.get("size").getInt() : 64);
@@ -46,12 +48,16 @@ public class ConfigItem extends Item {
         return tab;
     }
 
-    public boolean isDamageable() {
-        return this.getMaxDamage() > 0 && (!this.hasSubtypes || this.maxStackSize == 1) && mods.contains("damage");
+    public static void loadItems() {
+        CCT.i.getCategoryNames().forEach(c -> new ConfigItem(CCT.i.getCategory(c)));
+        items.forEach(item -> {
+            GameRegistry.register(item);
+            ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(new ResourceLocation(CCT.MODID), "inventory"));
+        });
     }
 
-    public static void loadItems() {
-        CustomThingies.i.getCategoryNames().forEach(c -> new ConfigItem(CustomThingies.i.getCategory(c)));
+    public boolean isDamageable() {
+        return this.getMaxDamage() > 0 && (!this.hasSubtypes || this.maxStackSize == 1) && mods.contains("damage");
     }
 
     public boolean hasEffect(ItemStack stack) {
